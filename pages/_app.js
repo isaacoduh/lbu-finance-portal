@@ -1,5 +1,18 @@
-import '@/styles/globals.css'
+import React from 'react';
+import '../styles/globals.css';
+import { useRouter } from 'next/router';
+import Navbar from '@/components/Navbar';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }) => {
+  const router = useRouter();
+
+  // Add Navbar to all pages
+  return (
+    <div>
+      <Navbar />
+      <Component {...pageProps} />
+    </div>
+  );
+};
+
+export default MyApp;
