@@ -11,7 +11,7 @@ const InvoiceDetails = ({reference}) => {
     // Fetch invoice data from API using the reference as a parameter
   const fetchInvoiceDetails = async () => {
     try {
-      await axios.get(`http://localhost:3500/api/v1/invoices/references/${reference}`)
+      await axios.get(`http://127.0.0.1:4200/api/v1/invoices/references/${reference}`)
       .then((response) => {
         setInvoice(response.data.data);
       })
@@ -38,7 +38,7 @@ const InvoiceDetails = ({reference}) => {
     // Handle pay button click
     // Add your logic to perform payment process here
     try {
-        await axios.put(`http://localhost:3500/api/v1/invoices/${reference}/pay`)
+        await axios.put(`http://127.0.0.1:4200/api/v1/invoices/${reference}/pay`)
         .then((response) => {
         //   setInvoice(response.data.data);
         console.log(response);

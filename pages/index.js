@@ -13,7 +13,7 @@ const Home = () => {
     // Replace this with your actual API call logic
     try {
       // console.log(studentId)
-      await axios.get(`http://localhost:3500/api/v1/accounts/student/${query}`)
+      await axios.get(`http://127.0.0.1:4200/api/v1/accounts/student/${query}`)
       .then((response) => {
         console.log(response.data.data.invoices)
         setInvoices(response.data.data.invoices);
